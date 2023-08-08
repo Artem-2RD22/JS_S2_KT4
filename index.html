@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Банковская карточка</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <form id="card-form">
+                <label for="bank">Банк:</label>
+                <select id="bank" name="bank">
+                    <option value="sber">Сбербанк</option>
+                    <option value="mkb">Московский Кредитный Банк</option>
+                    <option value="tinkoff">Тинькоф</option>
+                </select><br>
+                <label for="payment-system">Тип платежной системы:</label>
+                <select id="payment-system" name="payment-system">
+                    <option value="visa">Visa</option>
+                    <option value="mastercard">MasterCard</option>
+                    <option value="mir">МИР</option>
+                </select><br>
+                <label for="card-number">Номер карты (16 цифр):</label>
+                <input type="text" name="card-number" id="card-number" placeholder="XXXX XXXX XXXX XXXX" required><br>
+                <input type="hidden" name="actual-card-number" id="actual-card-number">                
+                <label for="cardholder-name">Имя держателя карты:</label>
+                <input type="text" id="cardholder-name" name="cardholder-name" placeholder="ИМЯ ДЕРЖАТЕЛЯ" required><br>
+                <label for="expiry-date">Месяц и год окончания карты:</label>
+                <input type="text" name="expiry-date" id="expiry-date" maxlength="5" placeholder="ММ/ГГ" required><br>
+                <input type="submit" value="Отправить">
+            </form>
+        </div>
+        <div class="card-container">
+            <div id="card-thumbnail" class="card-thumbnail">
+                <img id="bank-logo" src="images/sber.png" alt="логотип банка">
+                <div id="card-number-thumbnail">XXXX XXXX XXXX XXXX</div>
+                <div id="cardholder-name-thumbnail">ИМЯ ДЕРЖАТЕЛЯ</div>
+                <div id="expiry-date-thumbnail">ММ/ГГ</div>
+                <img id="payment-system-logo" src="images/visa.png" alt="логотип платежной системы">
+            </div>
+        </div>
+    </div>
+    <table id="card-table">
+        <thead>
+            <tr>
+                <th>Банк</th>
+                <th>Тип платежной системы</th>
+                <th>Номер карты</th>
+                <th>Имя держателя</th>
+                <th>Окончание срока действия</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <script src="script.js"></script>
+</body>
+</html>
